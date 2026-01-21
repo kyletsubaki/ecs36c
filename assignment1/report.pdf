@@ -1,1 +1,147 @@
-Test Case: 10 Books
+Written Report:
+    
+
+Experimental Data:
+Test Case 1: create_testData 10 10 (10 new, 10 requested)
+
+    Linear Trial 1: 5.459 microseconds
+    Linear Trial 2: 8.208 microseconds
+    Linear Trial 3: 15.917 microseconds
+    Linear Trial 4: 7.875 microseconds
+    Linear Trial 5: 8.458 microseconds
+    Average Linear CPU Time: 9.183 microseconds
+
+    Binary Trial 1: 9.25 microseconds
+    Binary Trial 2: 3.583 microseconds
+    Binary Trial 3: 5.208 microseconds
+    Binary Trial 4: 9.375 microseconds
+    Binary Trial 5: 7.667 microseconds
+    Average Binary CPU Time: 7.017 microseconds
+
+Test Case 2: create_testData 50 50 (50 new, 50 requested)
+
+    Linear Trial 1: 93.625 microseconds
+    Linear Trial 2: 104.5 microseconds
+    Linear Trial 3: 54.209 microseconds
+    Linear Trial 4: 59.667 microseconds
+    Linear Trial 5: 73.167 microseconds
+    Average Linear CPU Time: 77.034 microseconds
+
+    Binary Trial 1: 35.667 microseconds
+    Binary Trial 2: 24.084 microseconds
+    Binary Trial 3: 83.458 microseconds
+    Binary Trial 4: 36.541 microseconds
+    Binary Trial 5: 46 microseconds
+    Average Binary CPU Time: 45.15 microseconds
+
+Test Case 3: create_testData 100 100 (100 new, 100 requested)
+
+    Linear Trial 1: 156.125 microseconds
+    Linear Trial 2: 118.583 microseconds
+    Linear Trial 3: 238.75 microseconds
+    Linear Trial 4: 185.333 microseconds
+    Linear Trial 5: 182.5 microseconds
+    Average Linear CPU Time: 176.249 microseconds
+
+    Binary Trial 1: 63.125 microseconds
+    Binary Trial 2: 58.125 microseconds
+    Binary Trial 3: 36.916 microseconds
+    Binary Trial 4: 68.584 microseconds
+    Binary Trial 5: 28.292 microseconds
+    Average Binary CPU Time: 51.008 microseconds
+
+Test Case 4: create_testData 10 6 (10 new, 6 requested)
+
+    Linear Trial 1: 5.334 microseconds
+    Linear Trial 2: 6.583 microseconds
+    Linear Trial 3: 7.833 microseconds
+    Linear Trial 4: 8.875 microseconds
+    Linear Trial 5: 7.25 microseconds
+    Average Linear CPU Time: 7.175 microseconds
+
+    Binary Trial 1: 8 microseconds
+    Binary Trial 2: 7.708 microseconds
+    Binary Trial 3: 5.209 microseconds
+    Binary Trial 4: 4.041 microseconds
+    Binary Trial 5: 6.458 microseconds
+    Average Binary CPU Time: 6.283 microseconds
+
+Test Case 5: create_testData 100 6 (100 new, 6 requested)
+
+    Linear Trial 1: 20.5 microseconds
+    Linear Trial 2: 18.375 microseconds
+    Linear Trial 3: 15.708 microseconds
+    Linear Trial 4: 20.458 microseconds
+    Linear Trial 5: 23.958 microseconds
+    Average Linear CPU Time: 19.8 microseconds
+
+    Binary Trial 1: 10.333 microseconds
+    Binary Trial 2: 7.833 microseconds
+    Binary Trial 3: 11.417 microseconds
+    Binary Trial 4: 9.75 microseconds
+    Binary Trial 5: 7.916 microseconds
+    Average Binary CPU Time: 9.45 microseconds
+
+Test Case 6: create_testData 1000 6 (1000 new, 6 requested)
+
+    Linear Trial 1: 151.625 microseconds
+    Linear Trial 2: 97.917 microseconds
+    Linear Trial 3: 107.542 microseconds
+    Linear Trial 4: 141.542 microseconds
+    Linear Trial 5: 140.708 microseconds
+    Average Linear CPU Time: 127.867 microseconds
+
+    Binary Trial 1: 21.25 microseconds
+    Binary Trial 2: 14.584 microseconds
+    Binary Trial 3: 12.583 microseconds
+    Binary Trial 4: 10.291 microseconds
+    Binary Trial 5: 14.792 microseconds
+    Average Binary CPU Time: 14.7 microseconds
+
+Test Case 7: create_testData 6 10 (6 new, 10 requested)
+
+    Linear Trial 1: 8.958 microseconds
+    Linear Trial 2: 8.25 microseconds
+    Linear Trial 3: 7.042 microseconds
+    Linear Trial 4: 6.042 microseconds
+    Linear Trial 5: 6.875 microseconds
+    Average Linear CPU Time: 7.433 microseconds
+
+    Binary Trial 1: 6.542 microseconds
+    Binary Trial 2: 7.916 microseconds
+    Binary Trial 3: 12.25 microseconds
+    Binary Trial 4: 12.959 microseconds
+    Binary Trial 5: 14.458 microseconds
+    Average Binary CPU Time: 10.825 microseconds
+
+Test Case 8: create_testData 6 100 (6 new, 100 requested)
+
+    Linear Trial 1: 20.208 microseconds
+    Linear Trial 2: 16.5 microseconds
+    Linear Trial 3: 15.958 microseconds
+    Linear Trial 4: 23.125 microseconds
+    Linear Trial 5: 23.542 microseconds
+    Average Linear CPU Time: 19.867 microseconds
+
+    Binary Trial 1: 32.292 microseconds
+    Binary Trial 2: 33.209 microseconds
+    Binary Trial 3: 36.083 microseconds
+    Binary Trial 4: 45.125 microseconds
+    Binary Trial 5: 44 microseconds
+    Average Binary CPU Time: 38.142 microseconds
+
+Test Case 9: create_testData 6 1000 (6 new, 1000 requested)
+
+    Linear Trial 1: 250.292 microseconds
+    Linear Trial 2: 382.209 microseconds
+    Linear Trial 3: 289.5 microseconds
+    Linear Trial 4: 314.083 microseconds
+    Linear Trial 5: 225.042 microseconds
+    Average Linear CPU Time: 292.225 microseconds
+
+    Binary Trial 1: 252.417 microseconds
+    Binary Trial 2: 198.834 microseconds
+    Binary Trial 3: 148.625 microseconds
+    Binary Trial 4: 155.5 microseconds
+    Binary Trial 5: 289.75 microseconds
+    Average Binary CPU Time: 209.025 microseconds
