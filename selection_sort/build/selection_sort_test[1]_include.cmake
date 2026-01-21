@@ -1,0 +1,5 @@
+if(EXISTS "/Users/kyletsubaki/Documents/ECS36C/selection_sort/build/selection_sort_test[1]_tests.cmake")
+  include("/Users/kyletsubaki/Documents/ECS36C/selection_sort/build/selection_sort_test[1]_tests.cmake")
+else()
+  add_test(selection_sort_test_NOT_BUILT selection_sort_test_NOT_BUILT)
+endif()
