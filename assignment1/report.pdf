@@ -1,5 +1,37 @@
 Written Report:
-    
+    The timer starts when I call ct.Reset() in main(). If the user chooses linear search, 
+    we loop through every requested book to put through the linear search, which alone is 
+    O(M). The linear search has an approximate time complexity of O(N) since we loop through 
+    N total new books. In total, since we run the linear search M times, the time complexity
+    should theoretically be O(N*M). 
+
+    If the user chooses binary search, the average runtime should be noticibly shorter than
+    linear search in most scenarios. During all scenarios, we loop through every requested book,
+    which is O(M). The binary search is known to be O(log(N)), and since we run the binary search
+    for every requested book, the total time complexity should theoretically be O(M*log(N)).
+
+    Overall, for moderate to large new books N (50-1000) and small amounts of requested books M, 
+    binary search is consistently faster on average than linear search, often by factors of 2-10.
+    For small N, linear search can still be as fast if not faster for small and medium request sizes. As
+    N and M grow, the theoretical advantage of binary search appears in the data that as linear time
+    grows roughly proportionally, while binary grows more slowly. Since linear is O(N*M) and binary is
+    O(M*log(N)), binary will theoretically win in CPU time.
+
+Source of Error: 
+    Unfortunately, I realized too late that I had run all the trials and collected 
+    the data incorrectly. In main(), I initially would run the std::sort function
+    on the new books BEFORE the I even start the timer. This drastically changes the expected outcome
+    since I already have a sorted set of books to work with, which lowers CPU time for the binary search.
+    Knowing this, I can just assume that the binary search should be running a little longer than the
+    data currently represents. Since std::sort has an average time complexity of O(N*log(N)), we would 
+    add that to the binary search time complexity. Therefore, if I had written the code properly the first
+    time, the binary search would have been O(M*log(N) + N*log(N)). In this case, for N = M, binary search
+    should theoretically be faster than linear in all cases. For N > M and N < M, binary search will still be 
+    faster than linear search in all cases. I proved this with desmos graphs by plugging in the same values as
+    the experimental data.
+
+    I rewrote my code to run the sort ONLY if the user selects binary search or recursive binary search.
+    Now, binary search should theoretically be O(M*log(N) + N*log(N)) while linear search remains O(M*N).
 
 Experimental Data:
 Test Case 1: create_testData 10 10 (10 new, 10 requested)

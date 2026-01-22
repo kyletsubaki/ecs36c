@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
         std::cin >> search_method;
     }
 
-    std::vector<Book> sorted_books = sortBooks(new_books);
+    std::vector<Book> sorted_books;
 
     int count = 0;
     ct.Reset();
@@ -90,12 +90,14 @@ int main(int argc, char* argv[]) {
             }
         }
     } else if (search_method == 'b') {
+        sorted_books = sortBooks(new_books);
         for (Book& request : requested_books) {
             if (binarySearch(sorted_books, request)) {
                 count++;
             }
         }
     } else if (search_method == 'r') {
+        sorted_books = sortBooks(new_books);
         for (Book& request : requested_books) {
             if (recursiveBinarySearch(sorted_books, request, 0, sorted_books.size() - 1)) {
                 count++;
