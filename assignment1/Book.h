@@ -4,31 +4,34 @@
 #include <string>
 
 class Book {
-    private:
-        int getTypeOrder(const std::string& type) const {
-            if (type == "new") return 0;
-            if (type == "used") return 1;
-            if (type == "digital") return 2;
-            return 3; // Unkown input
-        }
+public:
+    int ISBN_number{};
+    std::string language;
+    std::string type;
 
-    public:
-        int ISBN_number;
-        std::string language, type;
-        Book() = default;
+    // Default constructor 
+    Book() = default;
 
-        bool operator<(const Book& other) const {
-            if (ISBN_number != other.ISBN_number) return ISBN_number < other.ISBN_number;
-            
-            int type1 = getTypeOrder(type);
-            int type2 = getTypeOrder(other.type);
-            if (type1 != type2) return type1 < type2;
+    // Parameterized constructor
+    Book(int i, const std::string& l, const std::string& t) : ISBN_number(i), language(l), type(t) {}
+
+    // Comparison order: ISBN number, language, type
+    bool operator<(const Book& other) const {
+        if (ISBN_number != other.ISBN_number)
+            return ISBN_number < other.ISBN_number;
+
+        if (language != other.language)
             return language < other.language;
-        }
 
-        bool operator==(const Book& other) const { 
-            return ISBN_number == other.ISBN_number && language == other.language && type == other.type;
-        }
+        return type < other.type;
+    }
+
+    // Returns true if all fields of both Book objects are identical
+    bool operator==(const Book& other) const {
+        return ISBN_number == other.ISBN_number &&
+               language == other.language &&
+               type == other.type;
+    }
 };
 
 #endif
