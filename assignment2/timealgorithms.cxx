@@ -21,7 +21,6 @@ int main(int argc, char* argv[]) {
     }
     in >> jsonObject; // Parses file with the >> operator
 
-    std::ostream& csv = std::cout; // Prints csv to cout
     std::cout << std::fixed << std::setprecision(6); 
     std::cout << "Sample,InsertionSortTime,InsertionSortCompares,InsertionSortMemaccess,"
           << "MergeSortTime,MergeSortCompares,MergeSortMemaccess,"
