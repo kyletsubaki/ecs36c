@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         // Finds consecutive inversions (where arr[i] > arr[i+1])
         nlohmann::json inversions; // Declares nlohmann::json object for inversion pairs
         bool hasInversion = false; // Initializes inversion check
-        for (int i = 0; i + 1 < sampleArray.size(); ++i) {
+        for (size_t i = 0; i + 1 < sampleArray.size(); ++i) {
             if (sampleArray[i] > sampleArray[i + 1]) {
                 inversions[std::to_string(i)] = {sampleArray[i], sampleArray[i + 1]}; // Stores inversion pair at index i
                 hasInversion = true; // Updates inversion check

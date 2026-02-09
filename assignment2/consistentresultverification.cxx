@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
         // Finds conflicts 
         nlohmann::json mismatches; // Declares nlohmann::json object for conflicting pairs
         bool hasMismatch = false; // Initializes conflict check
-        for (int i = 0; i < sampleArray1.size(); ++i) {
+        for (size_t i = 0; i < sampleArray1.size(); ++i) {
             if (sampleArray1[i] != sampleArray2[i]) {
                 mismatches[std::to_string(i)] = {sampleArray1[i], sampleArray2[i]}; // Stores mismatched pair at index i
                 hasMismatch = true; // Updates mismatch check
