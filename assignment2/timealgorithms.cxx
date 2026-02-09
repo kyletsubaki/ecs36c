@@ -21,16 +21,11 @@ int main(int argc, char* argv[]) {
     }
     in >> jsonObject; // Parses file with the >> operator
 
-    std::ofstream csv("stats.csv"); // Opens csv output
-    csv << std::fixed << std::setprecision(6); 
-    // Checks if csv opens properly
-    if (!csv) {
-        std::cerr << "Could not open stats.csv" << std::endl; // Error Message
-        return 1; // Terminates Program
-    }
-    csv << "Sample,InsertionSortTime,InsertionSortCompares,InsertionSortMemaccess,"
-        "MergeSortTime,MergeSortCompares,MergeSortMemaccess,"
-        "QuickSortTime,QuickSortCompares,QuickSortMemaccess\n"; // csv header row
+    std::ostream& csv = std::cout; // Prints csv to cout
+    std::cout << std::fixed << std::setprecision(6); 
+    std::cout << "Sample,InsertionSortTime,InsertionSortCompares,InsertionSortMemaccess,"
+          << "MergeSortTime,MergeSortCompares,MergeSortMemaccess,"
+          << "QuickSortTime,QuickSortCompares,QuickSortMemaccess\n"; // csv header row
 
     // Iterates over every sample
     for (auto itr = jsonObject.begin(); itr != jsonObject.end(); ++itr) {
@@ -67,10 +62,9 @@ int main(int argc, char* argv[]) {
         double quickTime = std::chrono::duration<double>(end - start).count(); // Elapsed time in seconds
 
         // Write csv row for this sample
-        csv << sampleName << ',' // Writes sample name
+        std::cout << sampleName << ',' // Writes sample name
             << insertionTime << ',' << insertionCompares << ',' << insertionMemaccess << ',' // Writes insertion stats 
             << mergeTime << ',' << mergeCompares << ',' << mergeMemaccess << ',' // Writes merge stats
             << quickTime << ',' << quickCompares << ',' << quickMemaccess << '\n'; // Writes quicksort stats
     }
-    csv.close();
 }
