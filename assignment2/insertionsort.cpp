@@ -9,11 +9,11 @@ void insertionSort(std::vector<long long>& arr, long long* compares, long long* 
 
         // Move elements greater than key one position to the right
         while (j >= 0) {
-            (*memaccess)++; // arr[j] read
+            (*memaccess) += 2; // arr[j] read, read key
             (*compares)++; // arr[j] > key
 
             if (arr[j] > key) {
-                (*memaccess)++; // arr[j+1] write
+                (*memaccess) += 2; // arr[j+1] write + arr[j] access
                 arr[j + 1] = arr[j];
                 j--;
             } else {
