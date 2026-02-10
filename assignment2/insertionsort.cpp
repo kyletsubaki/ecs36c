@@ -3,7 +3,7 @@
 void insertionSort(std::vector<long long>& arr, long long* compares, long long* memaccess) {
     int n = arr.size();
     for (int i = 1; i < n; ++i) {
-        (*memaccess)++; // arr[i] access
+        (*memaccess) += 2; // key write + arr[i] access
         long long key = arr[i];      
         int j = i - 1;
 
