@@ -8,8 +8,8 @@
 
 void InsertionSort(std::vector<long long>& numbers, long long* compares, long long* memaccess) {
 
-    for (int i = 1; i < numbers.size(); ++i) {
-        int j = i;
+    for (size_t i = 1; i < numbers.size(); ++i) {
+        size_t j = i;
 
         while (j > 0) {
             (*compares)++;

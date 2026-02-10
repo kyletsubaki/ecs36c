@@ -52,7 +52,6 @@ int main(int argc, char* argv[]) {
         double mergeTime = std::chrono::duration<double>(end - start).count(); // Elapsed time in seconds
 
         // Quicksort
-        int n = arrQuick.size(); // // Stores array length for bounds
         start = std::chrono::high_resolution_clock::now(); // Start quicksort time
         long long quickCompares = 0, quickMemaccess = 0; // Initializes stats for quicksort
         QuickSort(arrQuick, &quickCompares, &quickMemaccess); // Runs quicksort
