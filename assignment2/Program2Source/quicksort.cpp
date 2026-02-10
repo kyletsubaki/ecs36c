@@ -29,12 +29,16 @@ int Partition(std::vector<long long>& numbers, int i, int k, long long* compares
     int h = k;
 
     while (true) {
+      (*compares)++;
+      (*memaccess)++;
         while (numbers[l] < pivot) {
             (*compares)++;
             (*memaccess)++;
             ++l;
         }
-
+      
+      (*compares)++;
+      (*memaccess)++;
         while (pivot < numbers[h]) {
             (*compares)++;
             (*memaccess)++;
@@ -44,7 +48,7 @@ int Partition(std::vector<long long>& numbers, int i, int k, long long* compares
         if (l >= h) return h;
 
         std::swap(numbers[l], numbers[h]);
-        (*memaccess) += 4;
+        (*memaccess) += 6;
         ++l;
         --h;
     }
