@@ -48,7 +48,7 @@ int Partition(std::vector<long long>& numbers, int i, int k, long long* compares
         if (l >= h) return h;
 
         std::swap(numbers[l], numbers[h]);
-        (*memaccess) += 6;
+        (*memaccess) += 4;
         ++l;
         --h;
     }
