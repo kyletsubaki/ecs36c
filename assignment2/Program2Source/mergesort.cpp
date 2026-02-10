@@ -33,26 +33,27 @@ void Merge(std::vector<long long>& numbers, int i, int j, int k, long long* comp
         (*memaccess) += 2;
 
         if (numbers[leftPos] < numbers[rightPos]) {
+            (*memaccess) += 2;
             mergedNumbers[mergePos++] = numbers[leftPos++];
         }
         else {
+            (*memaccess) += 2;
             mergedNumbers[mergePos++] = numbers[rightPos++];
         }
-        (*memaccess)++;
     }
 
     while (leftPos <= j) {
-        mergedNumbers[mergePos++] = numbers[leftPos++];
-        (*memaccess)++;
+         (*memaccess) += 2;
+         mergedNumbers[mergePos++] = numbers[leftPos++];
     }
 
     while (rightPos <= k) {
+        (*memaccess) += 2;
         mergedNumbers[mergePos++] = numbers[rightPos++];
-        (*memaccess)++;
     }
 
     for (int m = 0; m < mergedSize; ++m) {
+        (*memaccess) += 2;
         numbers[i + m] = mergedNumbers[m];
-        (*memaccess)++;
     }
 }
