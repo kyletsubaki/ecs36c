@@ -1,35 +1,30 @@
 #include "quicksort.h"
 
 int partition(long long A[], int lo, int hi, long long* compares, long long* memaccess) {
-    (*memaccess)++; // A[lo] access
+    (*memaccess)++; // read A[lo]
     long long pivot = A[lo];
-    
     int i = lo;
     int j = hi + 1;
-
     while (true) {
         do {
-            ++i; // Move i right until A[i] >= pivot or i == hi
-            (*memaccess)++; // A[i] access
-            (*compares)++; // A[i] < pivot comparison
+            ++i;
+            (*memaccess)++; // read A[i]
+            (*compares)++; // A[i] < pivot
         } while (i <= hi && A[i] < pivot);
-        
         do {
-            --j; // Move j left until A[j] <= pivot or j == lo  
-            (*memaccess)++; // A[j] access
-            (*compares)++; // pivot < A[j] comparison
+            --j;
+            (*memaccess)++; // read A[j]
+            (*compares)++; // pivot < A[j]
         } while (j >= lo && pivot < A[j]);
-        
         if (i >= j) break;
-        
         std::swap(A[i], A[j]);
-        (*memaccess) += 2; // swap reads both A[i] and A[j]
+        (*memaccess) += 4; // read A[i], read A[j], write A[i], write A[j]
     }
-    
     std::swap(A[lo], A[j]);
-    (*memaccess) += 2; // final swap
+    (*memaccess) += 4;
     return j;
 }
+
 
 void quickSort(long long A[], int lo, int hi, long long* compares, long long* memaccess) {
     if (hi <= lo) return;
