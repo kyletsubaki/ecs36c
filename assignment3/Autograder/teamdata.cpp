@@ -9,9 +9,9 @@ TeamData::TeamData(std::string filename) {
 
     nlohmann::json json; // Declare JSON object
     in >> json; // Parse the file 
-    numPlayers_ = json["metadata"]["numPlayers"]; // Extract number of players from metadata and store in numPlayers_
+    numPlayers_ = json["metadata"]["numPlayers"]; // Extract number of players from metadata and store in numPlayers
 
-    // Initialize numPlayers_ x numPlayers_ matrix with 0.0 for every entry
+    // Initialize numPlayers by numPlayers matrix with 0.0 for every entry
     winPercentages_ = std::vector(numPlayers_, std::vector(numPlayers_, 0.0));
 
     // Fill matrix from teamStats

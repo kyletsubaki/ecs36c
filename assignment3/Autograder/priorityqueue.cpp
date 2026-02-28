@@ -18,9 +18,9 @@ void PriorityQueue::insert(KeyValuePair kv) {
     if (size_ > max_size_) {
         throw std::overflow_error("Error: MinHeap is already full."); // Handles overflow case
     }
-    ++size_;
-    nodes_[size_] = kv;
-    heapifyUp(size_);
+    ++size_; // Increment size
+    nodes_[size_] = kv; // Set new key value pair
+    heapifyUp(size_); // Bring up toward root
 }
 
 KeyValuePair PriorityQueue::min() {

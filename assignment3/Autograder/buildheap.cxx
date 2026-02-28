@@ -32,5 +32,5 @@ int main(int argc, char** argv) {
     nlohmann::json output = minHeap.JSON(); // Output JSON object
     output["metadata"]["maxHeapSize"] = maxHeapSize; // Add maxHeapSize to metadata
     output["metadata"]["numOperations"] = numOperations; // Add numOperations to metadata
-    std::cout << output.dump(2); // Print final JSON
+    std::cout << output.dump(2); // Print JSON
 }
