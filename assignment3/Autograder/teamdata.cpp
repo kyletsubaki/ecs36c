@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     int totalPlayers = data.numPlayers();
     std::vector<bool> used(totalPlayers, false);
     std::vector<std::vector<int>> teams;
-    int teamsNeeded = totalPlayers / 2;
+    size_t teamsNeeded = totalPlayers / 2;
     while (teams.size() < teamsNeeded) {
         double bestDiff = 1.0;
         int bestI = -1;
