@@ -2,6 +2,11 @@
 #define _TEAMDATA_H_
 
 #include <string>
+#include "json.hpp"
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <cmath>
 
 class TeamData {
     public:
