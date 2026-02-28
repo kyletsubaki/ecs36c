@@ -12,7 +12,7 @@ TeamData::TeamData(std::string filename) {
     numPlayers_ = json["metadata"]["numPlayers"]; // Extract number of players from metadata and store in numPlayers_
 
     // Initialize numPlayers_ x numPlayers_ matrix with 0.0 for every entry
-    winPercentages_ = std::vector<std::vector<double>>(numPlayers_, std::vector<double>(numPlayers_, 0.0)); 
+    winPercentages_ = std::vector(numPlayers_, std::vector(numPlayers_, 0.0));
 
     // Fill matrix from teamStats
     for (const auto& entry : json["teamStats"]) {
