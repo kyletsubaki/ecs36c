@@ -69,7 +69,6 @@ nlohmann::json PriorityQueue::JSON() const {
       }
       result[std::to_string(i)] = node;
   }
-  result["metadata"]["maxHeapSize"] = max_size_;
   result["metadata"]["max_size"] = max_size_;
   result["metadata"]["size"] = size_;
 	return result;
